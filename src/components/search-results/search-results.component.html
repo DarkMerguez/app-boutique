@@ -1,0 +1,5 @@
+<div class="container">
+    @for (product of searchedProducts; track product.id) {
+        <app-product-card  routerLink="/product/{{product.id}}" [id]="product.id"></app-product-card>
+    }
+</div>

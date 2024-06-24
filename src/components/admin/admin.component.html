@@ -1,0 +1,29 @@
+<h1>Bienvenue sur votre page admin</h1>
+
+<a routerLink="/product/post"><button>Ajouter un nouveau produit</button></a>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<h2>Tous les produits référencés :</h2>
+
+<div class="container">
+        @for (product of products; track product.id) {
+            <div class="card">
+                @if (product) {
+                    <app-product-card  routerLink="/product/{{product.id}}" [id]="product.id"></app-product-card>
+
+                <div>
+                    <a routerLink="/product/update/{{product.id}}"><button>Modifier</button></a>
+                    <a routerLink="/admin" (click)="delete(product)"><button>Supprimer</button></a>
+                </div>
+        
+                }
+            </div>
+        }
+    </div>

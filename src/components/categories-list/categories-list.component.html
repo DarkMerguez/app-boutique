@@ -1,0 +1,5 @@
+@for (category of categories; track category.id) {
+
+    <app-category-products  routerLink="/products/category/{{category.id}}" [categoryId]="category.id"></app-category-products>
+    
+}
